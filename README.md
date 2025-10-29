@@ -5,7 +5,7 @@ Due to legal requirements, steam is forced to always request your age when brows
 
 > *I hate repeating the same utterly useless action over and over again, such as entering my birthdate a godzillion times in the Steam store...*
 
-*Psst... if u liked this, please send me some BCT so i can buy kebab:* `bc1qzaen9cr8q754zah86fkzrk7m7ura8t9r89rsgm`
+*Psst... if u liked this, please send me some BTC so i can buy kebab:* `bc1qzaen9cr8q754zah86fkzrk7m7ura8t9r89rsgm`
 
 ## Usage
 You have 2 options:
