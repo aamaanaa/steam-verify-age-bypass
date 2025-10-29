@@ -8,6 +8,9 @@ Due to legal requirements, steam is forced to always request your age when brows
 *Psst... if u liked this, please send me some BTC so i can buy kebab:* `bc1qzaen9cr8q754zah86fkzrk7m7ura8t9r89rsgm`
 
 ## Usage
+
+### Linux
+
 You have 2 options:
 
 - Build the source code from [`source (RTFM)`](https://go.dev/doc/tutorial/compile-install)
@@ -28,4 +31,22 @@ Bypass completed successfully! You can now open Steam and access the store witho
 You may close the program.
 ```
 
-And that is all.
+### Windows
+
+You have 2 options:
+
+- Build the source code from [`source (RTFM)`](https://go.dev/doc/tutorial/compile-install)
+- Or, use the precompiled binary from the [`releases page->`](https://github.com/aamaanaa/steam-verify-age-bypass/releases/download/v1.0.0/bypas.exe)
+  
+Next, open up cmd or powershell, and do the following:
+
+```cmd
+# Run it
+./bypas.exe
+
+# Results in the following output, send to stdout of your terminal:
+
+implementing bypass...
+Bypass completed successfully! You can now open Steam and access the store without age verification.
+You may close the program.
+```
