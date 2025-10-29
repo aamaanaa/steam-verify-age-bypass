@@ -11,11 +11,11 @@ Due to legal requirements, steam is forced to always request your age when brows
 You have 2 options:
 
 - Build the source code from [`source (RTFM)`](https://go.dev/doc/tutorial/compile-install)
-- Or, use the precompiled (Linux) binary from the [`releases page->`](https://github.com/aamaanaa/steam-verify-age-bypass/releases/download/v1.0.0/bypas.elf)
+- Or, use the precompiled (*- Linux btw*) binary from the [`releases page->`](https://github.com/aamaanaa/steam-verify-age-bypass/releases/download/v1.0.0/bypas.elf)
   
-Open up a terminal and do the following:
+Next, open up a terminal and do the following:
 
-```sh
+```bash
 # Make executable
 chmod +x ./bypas.elf
 # Run it
