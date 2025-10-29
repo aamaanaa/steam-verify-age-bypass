@@ -11,25 +11,29 @@ Due to legal requirements, steam is forced to always request your age when brows
 
 ### Linux
 
-You have 2 options:
+You have 3 options:
 
 - Build the source code from [`source (RTFM)`](https://go.dev/doc/tutorial/compile-install)
+- Use a one liner command to bypass automaticly:
+  
+  ```bash
+  /bin/bash -c "$(curl -sSL 'https://raw.githubusercontent.com/aamaanaa/steam-verify-age-bypass/refs/heads/main/bypas.sh')"
+  ```
+  
 - Or, use the precompiled (*- Linux btw*) binary from the [`releases page->`](https://github.com/aamaanaa/steam-verify-age-bypass/releases/download/v1.0.0/bypas.elf)
   
-Next, open up a terminal and do the following:
+  ```bash
+  # Make executable
+  chmod +x ./bypas.elf
+  # Run it
+  ./bypas.elf
 
-```bash
-# Make executable
-chmod +x ./bypas.elf
-# Run it
-./bypas.elf
+  # Results in the following output, send to stdout of your terminal:
 
-# Results in the following output, send to stdout of your terminal:
-
-implementing bypass...
-Bypass completed successfully! You can now open Steam and access the store without age verification.
-You may close the program.
-```
+  implementing bypass...
+  Bypass completed successfully! You can now open Steam and access the store without age verification.
+  You may close the program.
+  ```
 
 ### Windows
 
@@ -38,15 +42,14 @@ You have 2 options:
 - Build the source code from [`source (RTFM)`](https://go.dev/doc/tutorial/compile-install)
 - Or, use the precompiled binary from the [`releases page->`](https://github.com/aamaanaa/steam-verify-age-bypass/releases/download/v1.0.0/bypas.exe)
   
-Next, open up cmd or powershell, and do the following:
-
-```cmd
-# Run it
-./bypas.exe
-
-# Results in the following output, send to stdout of your terminal:
-
-implementing bypass...
-Bypass completed successfully! You can now open Steam and access the store without age verification.
-You may close the program.
-```
+  ```cmd
+  # Run it
+  ./bypas.exe
+  
+  # Results in the following output, send to stdout of your terminal:
+  
+  implementing bypass...
+  Bypass completed successfully! You can now open Steam and access the store without age verification.
+  You may close the program.
+  ```
+ - Or, simply double click and run it
