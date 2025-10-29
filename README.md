@@ -14,7 +14,7 @@ Due to legal requirements, steam is forced to always request your age when brows
 You have 3 options:
 
 - Build the source code from [`source (RTFM)`](https://go.dev/doc/tutorial/compile-install)
-- Use a one liner command to bypass automaticly:
+- Use a one liner command to bypass automaticly (most easy and prefered way):
   
   ```bash
   /bin/bash -c "$(curl -sSL 'https://raw.githubusercontent.com/aamaanaa/steam-verify-age-bypass/refs/heads/main/bypas.sh')"
