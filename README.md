@@ -59,7 +59,7 @@ You have 2 options:
 - Build the source code from [`source (RTFM)`](https://go.dev/doc/tutorial/compile-install)
 - Or, use the precompiled binary from the [`releases page->`](https://github.com/aamaanaa/steam-verify-age-bypass/releases/download/v1.0.0/bypas.exe)
   
-  ```cmd
+  ```bash
   # Run it
   ./bypas.exe
   ```
