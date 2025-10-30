@@ -2,9 +2,14 @@ package main
 
 import (
 	"database/sql"
+	"errors"
+	"flag"
 	"fmt"
+	"os"
+	"path/filepath"
+	"runtime"
+
 	_ "github.com/mattn/go-sqlite3"
-	"steamagebypass/cookiepath"
 )
 
 var (
@@ -36,6 +41,15 @@ var (
 
 func insertCookies(dbPath string) (err error) {
 
+	fs, err := os.Stat(dbPath)
+	if err != nil {
+		return err
+	}
+
+	if fs.IsDir() {
+		return errors.New("path points to a directory and not a file")
+	}
+
 	db, err := sql.Open("sqlite3", dbPath)
 	if err != nil {
 		return err
@@ -45,14 +59,12 @@ func insertCookies(dbPath string) (err error) {
 	for _, c := range cookies {
 		cookie, ok := c.([]interface{})
 		if !ok {
-			fmt.Println("Error: Invalid cookie format")
-			continue
+			return errors.New("invalid cookie format")
 		}
 
 		_, err := db.Exec(stmt, cookie...)
 		if err != nil {
-			fmt.Println("Error: Failed to insert cookie:", err)
-			continue
+			return fmt.Errorf("insert cookie failed: %v", err)
 		}
 	}
 
@@ -61,21 +73,76 @@ func insertCookies(dbPath string) (err error) {
 
 func main() {
 
+	err := Run()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	select {}
+}
+
+func Run() (err error) {
+	var (
+		cookiesPathLinux   = filepath.Join(".steam", "steam", "config", "htmlcache", "Cookies")
+		cookiesPathWindows = filepath.Join("Steam", "config", "htmlcache", "Cookies")
+		path               string
+	)
+
+	filePath := flag.String("file", "", "Custom path to the Steam cookies file")
+	flag.Parse()
+
 	fmt.Println("implementing bypass...")
 
-	dbPath, err := cookiepath.GetSteamCookiePath()
+	if *filePath != "" {
+		path = *filePath
+	} else {
+		switch runtime.GOOS {
+
+		case "windows":
+
+			configDir, err := os.UserConfigDir()
+			if err != nil {
+				return err
+			}
+
+			path = filepath.Join(configDir, cookiesPathWindows)
+			break
+
+		case "darwin", "linux":
+
+			home, err := os.UserHomeDir()
+			if err != nil {
+				return err
+			}
+
+			path = filepath.Join(home, cookiesPathLinux)
+			break
+
+		default:
+			fmt.Println("Unsupported OS:", runtime.GOOS)
+			return
+		}
+	}
+
+	absPath, err := filepath.Abs(path)
 	if err != nil {
 		fmt.Println("Failure: ", err)
 		return
 	}
 
+	if _, err = os.Stat(absPath); os.IsNotExist(err) {
+		return fmt.Errorf(`cookie file %s not found, make sure this is the correct path`, absPath)
+	}
 
-	if err = insertCookies(dbPath); err != nil {
+	fmt.Println("Found Cookies file:\n>", absPath)
+
+	if err = insertCookies(absPath); err != nil {
 		fmt.Println("Failure: ", err)
 		return
 	}
 
-	fmt.Println("Bypass completed successfully! You can now open Steam and access the store without age verification.\nYou may close the program.")
+	fmt.Println("Bypass completed successfully!\nYou can now open Steam and access the store without age verification.\nYou may close the program.")
 
-	select {}
+	return nil
 }
