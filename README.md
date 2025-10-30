@@ -12,7 +12,25 @@ Psst... if u liked this, please send me some BTC so i can buy kebab:
 
 ## Usage
 
-**TIP:** you may use the `--file` parameter to point to a custom location of where your steam Cookie file is
+
+### Tip
+you may use the `--file` parameter to point to a custom location of where your steam Cookie file is. Example:
+```bash
+./bypas.elf --file  /home/urusername/.steam/steam/config/htmlcache/Cookies
+```
+
+### Expected output
+The expected output will look like this depending on os, and install location
+
+```
+implementing bypass...
+Found Cookies file:
+> /home/urusername/.steam/steam/config/htmlcache/Cookies
+Bypass completed successfully!
+You can now open Steam and access the store without age verification.
+You may close the program.
+```
+
 
 ### Linux
 
@@ -32,12 +50,6 @@ You have 3 options:
   chmod +x ./bypas.elf
   # Run it
   ./bypas.elf
-
-  # Results in the following output, send to stdout of your terminal:
-
-  implementing bypass...
-  Bypass completed successfully! You can now open Steam and access the store without age verification.
-  You may close the program.
   ```
 
 ### Windows
@@ -50,11 +62,5 @@ You have 2 options:
   ```cmd
   # Run it
   ./bypas.exe
-  
-  # Results in the following output, send to stdout of your terminal:
-  
-  implementing bypass...
-  Bypass completed successfully! You can now open Steam and access the store without age verification.
-  You may close the program.
   ```
  - Or, simply double click and run it
