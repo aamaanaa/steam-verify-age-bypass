@@ -12,6 +12,8 @@ Psst... if u liked this, please send me some BTC so i can buy kebab:
 
 ## Usage
 
+**TIP:** you may use the `--file` parameter to point to a custom location of where your steam Cookie file is
+
 ### Linux
 
 You have 3 options:
