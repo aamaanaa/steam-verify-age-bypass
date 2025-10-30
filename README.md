@@ -23,7 +23,7 @@ You have 3 options:
   /bin/bash -c "$(curl -sSL 'https://raw.githubusercontent.com/aamaanaa/steam-verify-age-bypass/refs/heads/main/bypas.sh')"
   ```
   
-- Or, use the precompiled (*- Linux btw*) binary from the [`releases page->`](https://github.com/aamaanaa/steam-verify-age-bypass/releases/download/v1.0.0/bypas.elf)
+- Or, use the precompiled (*- Linux btw*) binary from the [`releases page->`](https://github.com/aamaanaa/steam-verify-age-bypass/releases/download/v1.1.0/bypas.elf)
   
   ```bash
   # Make executable
