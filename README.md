@@ -40,8 +40,6 @@ You have 3 options:
   You may close the program.
   ```
 
-  > please note, that the linux binary from releases is staticly compiled and therefore quite large. this is needed to not depend on distro libary's and prevent runtime errors such as missing libaries on the host machine.
-
 ### Windows
 
 You have 2 options:
